@@ -6,19 +6,17 @@ public class AIController : MonoBehaviour
 {
 
     public float radiusOfSatisfaction = 0.5f;
-    public float radiusOfDeceleration = 1.5f;
-
-    private Transform target;
     public float speed = 3f;
 
+    private Vector3 target;
+    //private Transform target;
+    private CharacterController characterController;
     private bool isSeeking = false;
-    private bool outOfRadiusOfSatisfaction = false;
-    
 
     // Use this for initialization
     void Start()
     {
-
+        characterController = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -26,19 +24,27 @@ public class AIController : MonoBehaviour
     {
         
         Vector3 targetDir = transform.forward;
-        Vector3 targetPos = target.position;
+        //Vector3 targetPos = target.position;
         Vector3 currentPos = transform.position;
 
         if (isSeeking)
         {
-            targetDir = targetPos - currentPos;
-            if (outOfRadiusOfSatisfaction)
-            {
-                this.transform.position = this.transform.position + targetDir * speed * Time.deltaTime;
+            targetDir = target - currentPos;
+            transform.LookAt(target);
+            characterController.Move(targetDir.normalized * speed * Time.deltaTime);
 
+            if (Vector3.Distance(target, currentPos) <= radiusOfSatisfaction)
+            {
+                isSeeking = false;
             }
 
         }
 
+    }
+
+    public void Seek(Vector3 position)
+    {
+        target = position;
+        isSeeking = true;
     }
 }
