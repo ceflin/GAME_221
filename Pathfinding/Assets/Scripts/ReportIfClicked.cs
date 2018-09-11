@@ -21,9 +21,10 @@ public class ReportIfClicked : MonoBehaviour
             RaycastHit hitInfo;
             if (Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo))
             {
-                print("My location is " + transform.position.ToString("F1") + ", my node is...?");
-
                 Node myNode = generatedTiles.tilesToNodes[this.gameObject];
+
+                //print("My location is " + transform.position.ToString("F1") + ", my node is " + myNode.pos);
+                
             }
         }
     }

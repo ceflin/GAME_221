@@ -13,6 +13,8 @@ public class AIController : MonoBehaviour
     private CharacterController characterController;
     private bool isSeeking = false;
 
+    //private List<Vector3> waypoints = new List<Vector3>();
+
     // Use this for initialization
     void Start()
     {
@@ -46,5 +48,10 @@ public class AIController : MonoBehaviour
     {
         target = position;
         isSeeking = true;
+    }
+
+    public void SetTarget()
+    {
+
     }
 }

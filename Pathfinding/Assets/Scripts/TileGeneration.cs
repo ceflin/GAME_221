@@ -33,7 +33,7 @@ public class TileGeneration : MonoBehaviour {
                 
             }
         }
-
+        
         foreach (Vector3 nodePosition in nodesByPosition.Keys)
         {
             Node currentNode = nodesByPosition[nodePosition];

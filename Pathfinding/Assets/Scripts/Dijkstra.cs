@@ -56,10 +56,11 @@ public class Dijkstra
                 }
             }
 
-            closedList.Add(smallestCostSoFar);
+            closedList.Add(smallestCostSoFar);            
             openList.Remove(smallestCostSoFar);
 
         }//end of while loop - pathfinding complete
+        
         
         //TODO fill out waypoints
 
@@ -69,10 +70,10 @@ public class Dijkstra
         for (PathfindingNode waypoint = pathfindingNodes[toNode]; waypoint != null; waypoint = waypoint.predecessor)
         {
             waypoints.Add(waypoint.graphNode.pos);
+            Debug.Log(waypoint.graphNode.pos);
         }
 
-        waypoints.Reverse();
-
+        waypoints.Reverse();  
 
         return waypoints;
     }
