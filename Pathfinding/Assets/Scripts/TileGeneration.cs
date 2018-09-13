@@ -29,10 +29,12 @@ public class TileGeneration : MonoBehaviour {
                 tilesToNodes.Add(newTile, tileNode);
                 //newTile.GetComponent<NodeBinding>().node = tileNode;
 
-                newTile.GetComponent<ReportIfClicked>().generatedTiles = this;
+                //newTile.GetComponent<ReportIfClicked>().generatedTiles = this;
                 
             }
         }
+
+        nodesByPosition.
         
         foreach (Vector3 nodePosition in nodesByPosition.Keys)
         {
