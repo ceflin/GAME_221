@@ -281,7 +281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  rotation: 4
+  rotation: 100
   pitch: 3
 --- !u!114 &114933958749024912
 MonoBehaviour:

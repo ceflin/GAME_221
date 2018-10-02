@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLength: 20
-  textField: {fileID: 0}
+  textField: {fileID: 2066719631}
   adjectives:
   - Blue
   - Green
@@ -938,7 +938,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1799328217}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -822479833, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b37fa62e7ffccc40b4e6ff1974e3774, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_NetworkPort: 7777
@@ -955,7 +955,7 @@ MonoBehaviour:
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 0
   m_OfflineScene: MainMenu
-  m_OnlineScene: 
+  m_OnlineScene: GameScene
   m_SpawnPrefabs: []
   m_CustomConfig: 0
   m_MaxConnections: 4
@@ -1012,6 +1012,7 @@ MonoBehaviour:
   matchSize: 4
   isNetworkActive: 0
   matchMaker: {fileID: 0}
+  playerName: 
 --- !u!4 &1799328219
 Transform:
   m_ObjectHideFlags: 0
