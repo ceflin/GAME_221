@@ -13,6 +13,9 @@ public class ChatPanelController : MonoBehaviour
 
     private List<string> displayLines = new List<string>();
 
+    private CustomNetworkControl myNetworkControl;
+    private ChatController myChat;
+
     // Use this for initialization
     void Start()
     {
@@ -21,12 +24,30 @@ public class ChatPanelController : MonoBehaviour
         txtMessage.ActivateInputField();
         txtMessage.Select();
 
+        GameObject networkController = GameObject.FindGameObjectWithTag("NetworkController");
+        if (networkController != null)
+        {
+            myNetworkControl = networkController.GetComponent<CustomNetworkControl>();
+        }
+
+        myChat = GameObject.FindGameObjectWithTag("ChatSystem").GetComponent<ChatController>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (myNetworkControl != null)
+        {
+            displayLines.Clear();
+            for (int i = myChat.messages.Count - 1; i >= 0 && displayLines.Count < numOfLines; i--)
+            {
+                displayLines.Add(myChat.messages[i]);
+            }
 
+            displayLines.Reverse();
+            RefreshMessageDisplay();
+        }
     }
 
     public void btnSend_Click()
@@ -34,23 +55,38 @@ public class ChatPanelController : MonoBehaviour
         string message = txtMessage.text.Trim();
         if (message.Length > 0)
         {
-            displayLines.Add(message);
-            if (displayLines.Count > numOfLines)
+            if (myNetworkControl == null)
             {
-                displayLines.RemoveAt(0);
-            }
+                displayLines.Add(message);
+                if (displayLines.Count > numOfLines)
+                {
+                    displayLines.RemoveAt(0);
+                }
 
-            lblMessages.text = string.Empty;
-            for (int i = 0; i < displayLines.Count; i++)
-            {
-                lblMessages.text += displayLines[i];
-                if (i < displayLines.Count - 1) lblMessages.text += "\n";
+                RefreshMessageDisplay();
             }
+            else
+            {
+                //myNetworkControl.sendChatMessage(message);
+            }
+            
+            
+            
 
             txtMessage.text = string.Empty;
         }
 
         txtMessage.ActivateInputField();
+    }
+
+    public void RefreshMessageDisplay()
+    {
+        lblMessages.text = string.Empty;
+        for (int i = 0; i < displayLines.Count; i++)
+        {
+            lblMessages.text += displayLines[i];
+            if (i < displayLines.Count - 1) lblMessages.text += "\n";
+        }
     }
 
     public void txtMessage_EndEdit()

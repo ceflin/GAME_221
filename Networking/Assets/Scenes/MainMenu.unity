@@ -257,7 +257,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter IP...
+  m_Text: Enter Text...
 --- !u!222 &435824407
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -276,8 +276,9 @@ GameObject:
   - component: {fileID: 489908646}
   - component: {fileID: 489908645}
   - component: {fileID: 489908644}
+  - component: {fileID: 489908647}
   m_Layer: 5
-  m_Name: Button
+  m_Name: btnRandomize
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -289,19 +290,19 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 489908642}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2050166919}
-  m_Father: {fileID: 731854700}
-  m_RootOrder: 2
+  m_Father: {fileID: 903491135}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 122, y: 69}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 168, y: -92.79999}
   m_SizeDelta: {x: 80, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &489908644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,7 +341,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 489908645}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 489908647}
+        m_MethodName: SetRandomName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &489908645
@@ -377,78 +389,307 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 489908642}
   m_CullTransparentMesh: 0
---- !u!1 &731854699
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 731854700}
-  - component: {fileID: 731854702}
-  - component: {fileID: 731854701}
-  m_Layer: 5
-  m_Name: MainMenuPanel
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &731854700
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 731854699}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2111290164}
-  - {fileID: 2066719630}
-  - {fileID: 489908643}
-  m_Father: {fileID: 903491135}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.25, y: 0.2}
-  m_AnchorMax: {x: 0.75, y: 0.8}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &731854701
+--- !u!114 &489908647
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 731854699}
+  m_GameObject: {fileID: 489908642}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: da1ec27280fc3ea42bf5094b1484bf9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.7647059}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
---- !u!222 &731854702
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 731854699}
-  m_CullTransparentMesh: 0
+  maxLength: 20
+  textField: {fileID: 0}
+  adjectives:
+  - Blue
+  - Green
+  - Yellow
+  - Red
+  - Orange
+  - Cyan
+  - Magenta
+  - Brown
+  - Black
+  - Taupe
+  - Chartreuse
+  - Ebony
+  - Ivory
+  - Action
+  - Accidental
+  - Awesome
+  - Arid
+  - Acquired
+  - Buzzing
+  - Bombing
+  - Blasted
+  - Binary
+  - Bankrupt
+  - Cold
+  - Cuddly
+  - Chilled
+  - Curled
+  - Close
+  - Deadly
+  - Dawning
+  - Dear
+  - Dunked
+  - Dumb
+  - Eroding
+  - Evil
+  - Extra
+  - Enormous
+  - Egregious
+  - Frank
+  - Furry
+  - Flaming
+  - Flipped
+  - Functional
+  - Greedy
+  - Ghostly
+  - Gambling
+  - Gripping
+  - Growing
+  - Honest
+  - Hateful
+  - Hip
+  - Heavy
+  - Hunting
+  - Icy
+  - Insane
+  - Idiotic
+  - Implied
+  - Incandescent
+  - Jealous
+  - Just
+  - Jumping
+  - Jovial
+  - Junked
+  - Kicking
+  - Killer
+  - Kissing
+  - Knifing
+  - Knavish
+  - Lemon
+  - Lucid
+  - Lazy
+  - Lesser
+  - Locked
+  - Main
+  - Mean
+  - Moaning
+  - Mint
+  - Muscular
+  - Neon
+  - Natural
+  - Numbered
+  - Needed
+  - Navy
+  - Open
+  - Occult
+  - Opulent
+  - Ordinary
+  - Overdone
+  - Proud
+  - Peeled
+  - Plum
+  - Piping
+  - Posturing
+  - Quaint
+  - Quiet
+  - Quirky
+  - Queued
+  - Quailing
+  - Reluctant
+  - Rose
+  - Rhyming
+  - Reversed
+  - Raging
+  - Silly
+  - Stupid
+  - Strong
+  - Stone
+  - Schooled
+  - Teal
+  - Tame
+  - Timid
+  - Towering
+  - Thundering
+  - Usual
+  - Undone
+  - Upset
+  - Uploaded
+  - Unsung
+  - Vibrant
+  - Vicious
+  - Vain
+  - Vapid
+  - Violent
+  - Worthy
+  - Waiting
+  - Wimpy
+  - Walloping
+  - Windy
+  - Xanthous
+  - Xeric
+  - Xenophobic
+  - Xenial
+  - Xylotomous
+  - Young
+  - Yielding
+  - Yucky
+  - Yawning
+  - Yearly
+  - Zealous
+  - Zesty
+  - Zany
+  - Zippy
+  - Zygotic
+  nouns:
+  - Alley
+  - Aardvark
+  - Ammo
+  - Acrobat
+  - Abacus
+  - Asteroid
+  - Axe
+  - Ball
+  - Brawler
+  - Bully
+  - Bellows
+  - Blaster
+  - Beam
+  - Brick
+  - Cat
+  - Clutch
+  - Clip
+  - Cowboy
+  - Cow
+  - Cradle
+  - Crease
+  - Demon
+  - Destroyer
+  - Deacon
+  - Dimple
+  - Drifter
+  - Darkness
+  - Device
+  - Eraser
+  - Eulogy
+  - Emitter
+  - Emptiness
+  - Ease
+  - Essence
+  - Evidence
+  - Fault
+  - Flame
+  - Function
+  - Foot
+  - Fist
+  - Freezer
+  - Folly
+  - Gauntlet
+  - Greed
+  - Glow
+  - Guest
+  - Gang
+  - Gun
+  - Gaffe
+  - Hitcher
+  - Hacker
+  - Hunter
+  - Hangman
+  - Heaviness
+  - Hall
+  - Harp
+  - Igloo
+  - Icicle
+  - Idiot
+  - Insanity
+  - Isolation
+  - Ignorance
+  - Itch
+  - Justice
+  - Junk
+  - Joke
+  - Jester
+  - Jawbone
+  - Killer
+  - Kart
+  - Keeper
+  - King
+  - Kiss
+  - Knife
+  - Leopard
+  - Lion
+  - Lemur
+  - Looper
+  - Log
+  - Lunch
+  - Luck
+  - Moment
+  - Music
+  - Money
+  - Moon
+  - Micron
+  - Magnum
+  - Net
+  - Nerd
+  - Night
+  - Noodle
+  - Narwahl
+  - Owl
+  - Occupant
+  - Outsider
+  - Octave
+  - Person
+  - Prisoner
+  - Prince
+  - Pile
+  - Private
+  - Queen
+  - Queer
+  - Returner
+  - Riser
+  - Rice
+  - Reloader
+  - Student
+  - Sun
+  - Star
+  - Sky
+  - Slave
+  - Snack
+  - Tree
+  - Trumpet
+  - Tirade
+  - Teapot
+  - Turtle
+  - Umpire
+  - Underdog
+  - Uvula
+  - Victor
+  - Victim
+  - Viola
+  - Violin
+  - Vanguard
+  - Winner
+  - Weather
+  - Writing
+  - Wasp
+  - Witherer
+  - Wisher
+  - Witch
+  - Warlock
+  - Warrior
+  - Yesterday
+  - Youth
+  - Yacht
+  - Yeller
+  - Yielder
+  - Zealot
+  - Zeal
+  - Zebra
 --- !u!1 &858421650
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,7 +769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &903491132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -596,7 +837,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 731854700}
+  - {fileID: 2066719630}
+  - {fileID: 489908643}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -683,7 +925,7 @@ GameObject:
   - component: {fileID: 1799328220}
   m_Layer: 0
   m_Name: NetworkManager
-  m_TagString: Untagged
+  m_TagString: NetworkController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -712,7 +954,7 @@ MonoBehaviour:
     type: 2}
   m_AutoCreatePlayer: 1
   m_PlayerSpawnMethod: 0
-  m_OfflineScene: 
+  m_OfflineScene: MainMenu
   m_OnlineScene: 
   m_SpawnPrefabs: []
   m_CustomConfig: 0
@@ -796,8 +1038,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   manager: {fileID: 0}
   showGUI: 1
-  offsetX: 0
-  offsetY: 0
+  offsetX: 480
+  offsetY: 270
 --- !u!1 &2050166918
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,7 +1107,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Connect
+  m_Text: Random
 --- !u!222 &2050166921
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -884,8 +1126,9 @@ GameObject:
   - component: {fileID: 2066719633}
   - component: {fileID: 2066719632}
   - component: {fileID: 2066719631}
+  - component: {fileID: 2066719634}
   m_Layer: 5
-  m_Name: InputField
+  m_Name: txtPlayerName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -897,20 +1140,21 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2066719629}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 435824405}
   - {fileID: 2100651392}
-  m_Father: {fileID: 731854700}
-  m_RootOrder: 1
+  - {fileID: 2111290164}
+  m_Father: {fileID: 903491135}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1, y: 69}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 3, y: -77.79999}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2066719631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -959,12 +1203,34 @@ MonoBehaviour:
   m_CharacterLimit: 15
   m_OnEndEdit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2066719634}
+        m_MethodName: AssignNameToNetworkControl
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+SubmitEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2066719634}
+        m_MethodName: AssignNameToNetworkControl
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.InputField+OnChangeEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
@@ -1008,6 +1274,17 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2066719629}
   m_CullTransparentMesh: 0
+--- !u!114 &2066719634
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2066719629}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddeee7aa198d7a941920dc4bab2d1ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2100651391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,7 +1371,7 @@ GameObject:
   - component: {fileID: 2111290166}
   - component: {fileID: 2111290165}
   m_Layer: 5
-  m_Name: Text
+  m_Name: lblPlayerName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1106,18 +1383,18 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2111290163}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 731854700}
-  m_RootOrder: 0
+  m_Father: {fileID: 2066719630}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -77, y: 64}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -170, y: -20}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &2111290165
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1150,7 +1427,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Join Game
+  m_Text: Player Name
 --- !u!222 &2111290166
 CanvasRenderer:
   m_ObjectHideFlags: 0
