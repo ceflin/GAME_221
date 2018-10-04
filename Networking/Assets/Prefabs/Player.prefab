@@ -61,6 +61,8 @@ GameObject:
   - component: {fileID: 114933958749024912}
   - component: {fileID: 114520490842912292}
   - component: {fileID: 143153728183409744}
+  - component: {fileID: 114001918569748310}
+  - component: {fileID: 114678125011827666}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -159,7 +161,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: f7be4373725544847adfa4a32ccc02fb, type: 2}
+  - {fileID: 2100000, guid: 73bb223e081512a428ab3677c06f32b2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -205,6 +207,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114001918569748310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1460820645303636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17596f4c7f2c56948a159ff364cea099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firePoint: {fileID: 0}
+  projectile: {fileID: 1202885820984816, guid: abc2f20293f145242a378888f6dc14cc, type: 2}
+  launchForce: 800
 --- !u!114 &114183861507844084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -269,6 +285,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f30e31d016e19044a5cfa8c7fd24637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114678125011827666
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1460820645303636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1267208747, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Target: {fileID: 4264480495259432}
+  m_ChildIndex: 0
+  m_SendInterval: 0.1
+  m_SyncRotationAxis: 7
+  m_RotationSyncCompression: 0
+  m_MovementThreshold: 0.001
+  m_InterpolateRotation: 0.5
+  m_InterpolateMovement: 0.5
 --- !u!114 &114759306027312764
 MonoBehaviour:
   m_ObjectHideFlags: 1
