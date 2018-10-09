@@ -33,6 +33,7 @@ public class FireControls : NetworkBehaviour
     {
         GameObject newProjectile = GameObject.Instantiate(projectile, firePoint.position, firePoint.rotation);
         newProjectile.GetComponent<Rigidbody>().AddForce(newProjectile.transform.forward * launchForce);
+        newProjectile.GetComponent<PuffBallController>().owningPlayer = this;
 
         NetworkServer.Spawn(newProjectile);
     }
@@ -40,7 +41,10 @@ public class FireControls : NetworkBehaviour
     [ClientRpc]
     void RpcShowHit()
     {
-        print("I got hit!");
+        if (isLocalPlayer)
+        {
+            print(GetComponent<PlayerScore>().playerName + " got hit!");
+        }
 
     }
 
@@ -50,6 +54,9 @@ public class FireControls : NetworkBehaviour
 
         if (collision.gameObject.tag == "Projectile")
         {
+            FireControls firingPlayer = collision.gameObject.GetComponent<PuffBallController>().owningPlayer;
+            firingPlayer.GetComponent<PlayerScore>().Score++;
+            //.GetComponent<PlayerScore>().Score++;
             RpcShowHit();
         }
     }

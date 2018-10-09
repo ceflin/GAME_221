@@ -9,7 +9,7 @@ public class ChatController : MonoBehaviour
     private Dictionary<int, string> namesByConnectionID = new Dictionary<int, string>();
     private Dictionary<string, int> connectionIDsByName = new Dictionary<string, int>();
     public int maxNameLength = 20;
-    private string localPlayerName;
+    public string localPlayerName;
 
     public List<string> messages = new List<string>();
 

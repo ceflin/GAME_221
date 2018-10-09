@@ -11,6 +11,12 @@ public class CustomNetworkControl : NetworkManager
 
     public string playerName;
     private ChatController myChat;
+    private ScoreBoardController myScoreboard;
+
+    internal void RegisterScoreboard(ScoreBoardController scoreboardController)
+    {
+        myScoreboard = scoreboardController;
+    }
 
     #endregion
 
