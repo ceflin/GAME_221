@@ -8,6 +8,8 @@ public class FirstPersonController : MonoBehaviour
     public float rotation = 4.0f;
     public float pitch = 3.0f;
 
+    public bool isMouseLock = true;
+
     private Transform eyeMount;
     private CharacterController characterController;
 
@@ -19,12 +21,15 @@ public class FirstPersonController : MonoBehaviour
         eyeMount = transform.Find("EyeMount");
         if (eyeMount == null) Debug.LogError("Player GameObject Error: No EyeMount child.");
 
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        if (Input.GetKey(KeyCode.Escape))
+        if (isMouseLock)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            if (Input.GetKey(KeyCode.Escape))
+            {
+                Cursor.lockState = CursorLockMode.None;
+                Cursor.visible = true;
+            }
         }
     }
 
