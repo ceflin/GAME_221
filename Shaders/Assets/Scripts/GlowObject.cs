@@ -60,4 +60,9 @@ public class GlowObject : MonoBehaviour
 			enabled = false;
 		}
 	}
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
 }
