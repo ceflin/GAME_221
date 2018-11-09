@@ -11,6 +11,7 @@ public class UIController : MonoBehaviour
 
 
     public Text txtLevelWidth;
+    public Text txtLevelLength;
     public GameController gameController;
 
 
